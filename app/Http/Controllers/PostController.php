@@ -50,6 +50,11 @@ class PostController extends Controller
         return redirect()->back();
     }
 
+    public function list() {
+        $posts = Post::paginate(10);
+        return view('posts.list',compact('posts'));
+    }
+
 
 
 }

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/posts/list',[\App\Http\Controllers\PostController::class,'list'])->name('posts.list');
+
 Route::delete('/posts/{id}/delete',[\App\Http\Controllers\PostController::class, 'delete'])->name('posts.delete');
 
 
